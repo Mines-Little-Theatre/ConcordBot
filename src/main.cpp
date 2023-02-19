@@ -35,7 +35,7 @@ int main(int argc, const char** argv){
         "Thank you for contacting Concord Theatricals!\n\n"
         "We have recieved your email and will respond as swiftly as possible. We appreciate your patience.\n\n"
         "**PLEASE NOTE**:\n\n"
-        "*Our US offices will be closed on Monday, Janurary 19th, in observance of Martin Luther King Jr. Day.*";
+        "*Our US offices will be closed on Monday, Janurary 16th, in observance of Martin Luther King Jr. Day.*";
     
     concordbot.on_message_create([&concordbot, &CONCORD_AUTO_REPLY] (const dpp::message_create_t& event){
             if(event.msg.author.is_bot()){
