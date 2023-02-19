@@ -29,11 +29,11 @@ ENDIF()
 
 
 
-add_executable(KyleBot ${SRC_FILES})
+add_executable(ConcordBot ${SRC_FILES})
 
-target_link_libraries(KyleBot dpp)
+target_link_libraries(ConcordBot dpp)
 
-set_target_properties(KyleBot PROPERTIES
+set_target_properties(ConcordBot PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
