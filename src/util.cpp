@@ -29,7 +29,7 @@ std::string chooseRandomReaction(){
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    std::uniform_int_distribution<int> dist(0, NUMBER_OF_REACTIONS);
+    std::uniform_int_distribution<int> dist(0, NUMBER_OF_REACTIONS - 1);
 
     return AVAILABLE_REACTIONS[dist(gen)];
 }
