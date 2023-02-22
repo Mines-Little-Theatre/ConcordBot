@@ -44,7 +44,7 @@ std::string chooseRandomAutoReply() {
     const std::string CONCORD_LICENSE = 
         "**Please do not reply to this message. This is an automated email**\n\n"
         "This is an update regarding your Concord Musical Request 069420 for Concord the Musical.\n\n"
-        "We are working very very hward to do everything we can to get you a swift response. Please be aware,"
+        "We are working very hard to do everything we can to get you a swift response. Please be aware,"
         " some licensing requests may be denied entirely. You will receive notification as soon as possible.\n\n";
 
     const std::string AVAILABLE_AUTO_REPLYS[] = {CONCORD_DEFUALT, CONCORD_LICENSE};
