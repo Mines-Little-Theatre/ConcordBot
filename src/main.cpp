@@ -31,13 +31,7 @@ int main(int argc, const char** argv){
 
     concordbot.on_log(dpp::utility::cout_logger());
 
-    const std::string CONCORD_AUTO_REPLY = 
-        "Thank you for contacting Concord Theatricals!\n\n"
-        "We have recieved your email and will respond as swiftly as possible. We appreciate your patience.\n\n"
-        "**PLEASE NOTE**:\n\n"
-        "*Our US offices will be closed on Monday, Janurary 16th, in observance of Martin Luther King Jr. Day.*";
-    
-    concordbot.on_message_create([&concordbot, &CONCORD_AUTO_REPLY] (const dpp::message_create_t& event){
+    concordbot.on_message_create([&concordbot] (const dpp::message_create_t& event){
             if(event.msg.author.is_bot()){
                 return;
             }
@@ -56,7 +50,7 @@ int main(int argc, const char** argv){
             }
 
             if(containsConcord && containsUpdate){
-                event.reply(CONCORD_AUTO_REPLY, false);
+                event.reply(chooseRandomAutoReply(), false);
                 return;
             }
 
