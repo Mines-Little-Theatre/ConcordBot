@@ -67,7 +67,7 @@ std::string chooseRandomAutoReplyUpdate() {
         "\t- We must receive a number of first born children equal to or greater than the number of scripts ordered.\n"
         "\t- Our legal team is entitled to a number of kidneys equal to or greater than the number of seats in your venue.\n"
         "\t- You must send a 30 minute apology video from each member of your production including any support and production staff\n\n"
-        "Please send your agreement to these terms to your licensing agent and your account will be reviewed for removal from suspension"
+        "Please send your agreement to these terms to your licensing agent and your account will be reviewed for removal from suspension "
         "after a 2 year period.\n\n"
         "Thank you for choosing Concord Theatricals!";
 
