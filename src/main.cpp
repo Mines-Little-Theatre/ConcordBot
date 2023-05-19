@@ -49,13 +49,17 @@ int main(int argc, const char** argv){
                 return;
             }
 
+            if(containsConcord && containsLicense){
+                event.reply(chooseRandomAutoReplyLicense(), false);
+                return;
+            }
+
             if(containsConcord && containsUpdate){
-                event.reply(chooseRandomAutoReply(), false);
+                event.reply(chooseRandomAutoReplyUpdate(), false);
                 return;
             }
 
             if(containsConcord){
-
                 concordbot.message_add_reaction(event.msg, chooseRandomReaction());
             }
 

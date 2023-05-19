@@ -18,7 +18,9 @@ bool getEnvValue(const std::string& KEY, std::string& _value);
 
 std::string chooseRandomReaction();
 
-std::string chooseRandomAutoReply();
+std::string chooseRandomAutoReplyLicense();
+
+std::string chooseRandomAutoReplyUpdate();
 
 void processMessage(std::string& _message, bool& containsConcord, bool& containsUpdate, bool& containsLicense);
 

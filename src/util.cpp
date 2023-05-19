@@ -34,7 +34,17 @@ std::string chooseRandomReaction(){
     return AVAILABLE_REACTIONS[dist(gen)];
 }
 
-std::string chooseRandomAutoReply() {
+std::string chooseRandomAutoReplyLicense(){
+    // for now this isnt random. 
+
+    const std::string CONCORD_EASY = 
+        "Thank you for your interest in licensing a show from Concord Theatricals!\n\n"
+        "We hope to make the process of licensing straightforward, quick, and uncomplicated.";
+
+    return CONCORD_EASY;
+}
+
+std::string chooseRandomAutoReplyUpdate() {
     const std::string CONCORD_DEFUALT = 
         "Thank you for contacting Concord Theatricals!\n\n"
         "We have recieved your email and will respond as swiftly as possible. We appreciate your patience.\n\n"
@@ -47,8 +57,22 @@ std::string chooseRandomAutoReply() {
         "We are working very hard to do everything we can to get you a swift response. Please be aware,"
         " some licensing requests may be denied entirely. You will receive notification as soon as possible.\n\n";
 
-    const std::string AVAILABLE_AUTO_REPLYS[] = {CONCORD_DEFUALT, CONCORD_LICENSE};
-    const int NUMBER_OF_AUTO_REPLYS = 2;
+    const std::string CONCORD_CANCELLED = 
+        "**Please do not reply to this message. This is an automated email**\n\n"
+        "We have not received the Licensing Fees due for Concord the Musical on License agreement 069420.\n\n"
+        "Because of this non-payment, your licensing agreement for Concord the Musical has been cancelled. Please "
+        "any and all advertisement and production plans for this title if you have not done so already. Should "
+        "production open without payment of the required licensing fees, we *must* consider this a willful act "
+        "of copyright infringment subject to the following penalties:\n"
+        "\t- We must receive a number of first born children equal to or greater than the number of scripts ordered.\n"
+        "\t- Our legal team is entitled to a number of kidneys equal to or greater than the number of seats in your venue.\n"
+        "\t- You must send a 30 minute apology video from each member of your production including any support and production staff\n\n"
+        "Please send your agreement to these terms to your licensing agent and your account will be reviewed for removal from suspension"
+        "after a 2 year period.\n\n"
+        "Thank you for choosing Concord Theatricals!";
+
+    const std::string AVAILABLE_AUTO_REPLYS[] = {CONCORD_DEFUALT, CONCORD_LICENSE, CONCORD_CANCELLED};
+    const int NUMBER_OF_AUTO_REPLYS = 3;
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -58,8 +82,6 @@ std::string chooseRandomAutoReply() {
     return AVAILABLE_AUTO_REPLYS[dist(gen)];
 
 }
-
-
 
 
 void processMessage(std::string& _message, bool& containsConcord, bool& containsUpdate, bool& containsLicense){
