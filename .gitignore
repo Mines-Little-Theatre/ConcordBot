@@ -1,3 +1,5 @@
 compile_commands.json
 cmake-build
 .cache
+config
+.DS_Store
