@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 
+#include "rng.h"
+
 /**
  * This function reads an enviromental variable. Check return value to see if the data in value should be trusted.
  *
@@ -16,11 +18,11 @@
 
 bool getEnvValue(const std::string& KEY, std::string& _value);
 
-std::string chooseRandomReaction();
+std::string chooseRandomReaction(rng &random);
 
-std::string chooseRandomAutoReplyLicense();
+std::string chooseRandomAutoReplyLicense(rng &random);
 
-std::string chooseRandomAutoReplyUpdate();
+std::string chooseRandomAutoReplyUpdate(rng &random);
 
 void processMessage(std::string& _message, bool& containsConcord, bool& containsUpdate, bool& containsLicense);
 

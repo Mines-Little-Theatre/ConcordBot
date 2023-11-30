@@ -6,6 +6,7 @@
 #include "cluster.h"
 #include "dispatcher.h"
 #include "intents.h"
+#include "rng.h"
 #include "util.h"
 
 int main(int argc, const char** argv){
@@ -23,7 +24,6 @@ int main(int argc, const char** argv){
         return -1;
     }
 
-
     uint64_t intents = dpp::i_default_intents | dpp::i_message_content;
 
 
@@ -31,7 +31,9 @@ int main(int argc, const char** argv){
 
     concordbot.on_log(dpp::utility::cout_logger());
 
-    concordbot.on_message_create([&concordbot] (const dpp::message_create_t& event){
+    rng random;
+
+    concordbot.on_message_create([&concordbot, &random] (const dpp::message_create_t& event){
             if(event.msg.author.is_bot()){
                 return;
             }
@@ -50,17 +52,17 @@ int main(int argc, const char** argv){
             }
 
             if(containsConcord && containsLicense){
-                event.reply(chooseRandomAutoReplyLicense(), false);
+                event.reply(chooseRandomAutoReplyLicense(random), false);
                 return;
             }
 
             if(containsConcord && containsUpdate){
-                event.reply(chooseRandomAutoReplyUpdate(), false);
+                event.reply(chooseRandomAutoReplyUpdate(random), false);
                 return;
             }
 
             if(containsConcord){
-                concordbot.message_add_reaction(event.msg, chooseRandomReaction());
+                concordbot.message_add_reaction(event.msg, chooseRandomReaction(random));
             }
 
 

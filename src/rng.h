@@ -1,15 +1,15 @@
-#ifndef RANDOM_H
-#define RANDOM_H
+#ifndef RNG_H
+#define RNG_H
 
 #include <random>
 
-class random {
+class rng {
 private:
   std::default_random_engine gen;
 
 public:
-  random();
+  rng();
   size_t randomIndex(size_t max);
 };
 
-#endif // RANDOM_H
+#endif // RNG_H
