@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(lib/DPP/include)
 
-set(SRC_FILES src/main.cpp src/util.cpp src/util.h)
+set(SRC_FILES src/main.cpp src/RandomNumberGenerator.cpp src/RandomNumberGenerator.h src/util.cpp src/util.h)
 
 
 SET( CMAKE_EXPORT_COMPILE_COMMANDS ON )

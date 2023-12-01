@@ -2,6 +2,7 @@
 #include <random>
 #include <algorithm>
 
+#include "RandomNumberGenerator.h"
 #include "util.h"
 
 
@@ -22,19 +23,14 @@ bool getEnvValue(const std::string& KEY, std::string& _value){
 
 
 
-std::string chooseRandomReaction(){
+std::string chooseRandomReaction(RandomNumberGenerator &random){
     const std::string AVAILABLE_REACTIONS[] = { "😠", "😡", "🤬", "😤", "👎", "🖕" };
     const size_t NUMBER_OF_REACTIONS = 6;
 
-    std::random_device rd;
-    std::mt19937 gen(rd());
-
-    std::uniform_int_distribution<int> dist(0, NUMBER_OF_REACTIONS - 1);
-
-    return AVAILABLE_REACTIONS[dist(gen)];
+    return AVAILABLE_REACTIONS[random.randomIndex(NUMBER_OF_REACTIONS)];
 }
 
-std::string chooseRandomAutoReplyLicense(){
+std::string chooseRandomAutoReplyLicense(RandomNumberGenerator &random){
     // for now this isnt random. 
 
     const std::string CONCORD_EASY = 
@@ -44,7 +40,7 @@ std::string chooseRandomAutoReplyLicense(){
     return CONCORD_EASY;
 }
 
-std::string chooseRandomAutoReplyUpdate() {
+std::string chooseRandomAutoReplyUpdate(RandomNumberGenerator &random) {
     const std::string CONCORD_DEFUALT = 
         "Thank you for contacting Concord Theatricals!\n\n"
         "We have recieved your email and will respond as swiftly as possible. We appreciate your patience.\n\n"
@@ -74,12 +70,7 @@ std::string chooseRandomAutoReplyUpdate() {
     const std::string AVAILABLE_AUTO_REPLYS[] = {CONCORD_DEFUALT, CONCORD_LICENSE, CONCORD_CANCELLED};
     const int NUMBER_OF_AUTO_REPLYS = 3;
 
-    std::random_device rd;
-    std::mt19937 gen(rd());
-
-    std::uniform_int_distribution<int> dist(0, NUMBER_OF_AUTO_REPLYS - 1);
-
-    return AVAILABLE_AUTO_REPLYS[dist(gen)];
+    return AVAILABLE_AUTO_REPLYS[random.randomIndex(NUMBER_OF_AUTO_REPLYS)];
 
 }
 
