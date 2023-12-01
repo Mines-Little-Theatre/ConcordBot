@@ -3,13 +3,13 @@
 
 #include <random>
 
-class rng {
+class RandomNumberGenerator {
 private:
   std::default_random_engine gen;
 
 public:
-  rng();
-  size_t randomIndex(size_t length);
+  RandomNumberGenerator();
+  int randomIndex(int length);
 };
 
 #endif // RNG_H

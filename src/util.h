@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 
-#include "rng.h"
+#include "RandomNumberGenerator.h"
 
 /**
  * This function reads an enviromental variable. Check return value to see if the data in value should be trusted.
@@ -18,11 +18,11 @@
 
 bool getEnvValue(const std::string& KEY, std::string& _value);
 
-std::string chooseRandomReaction(rng &random);
+std::string chooseRandomReaction(RandomNumberGenerator &random);
 
-std::string chooseRandomAutoReplyLicense(rng &random);
+std::string chooseRandomAutoReplyLicense(RandomNumberGenerator &random);
 
-std::string chooseRandomAutoReplyUpdate(rng &random);
+std::string chooseRandomAutoReplyUpdate(RandomNumberGenerator &random);
 
 void processMessage(std::string& _message, bool& containsConcord, bool& containsUpdate, bool& containsLicense);
 

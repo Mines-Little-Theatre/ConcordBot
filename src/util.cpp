@@ -2,7 +2,7 @@
 #include <random>
 #include <algorithm>
 
-#include "rng.h"
+#include "RandomNumberGenerator.h"
 #include "util.h"
 
 
@@ -23,14 +23,14 @@ bool getEnvValue(const std::string& KEY, std::string& _value){
 
 
 
-std::string chooseRandomReaction(rng &random){
+std::string chooseRandomReaction(RandomNumberGenerator &random){
     const std::string AVAILABLE_REACTIONS[] = { "😠", "😡", "🤬", "😤", "👎", "🖕" };
     const size_t NUMBER_OF_REACTIONS = 6;
 
     return AVAILABLE_REACTIONS[random.randomIndex(NUMBER_OF_REACTIONS)];
 }
 
-std::string chooseRandomAutoReplyLicense(rng &random){
+std::string chooseRandomAutoReplyLicense(RandomNumberGenerator &random){
     // for now this isnt random. 
 
     const std::string CONCORD_EASY = 
@@ -40,7 +40,7 @@ std::string chooseRandomAutoReplyLicense(rng &random){
     return CONCORD_EASY;
 }
 
-std::string chooseRandomAutoReplyUpdate(rng &random) {
+std::string chooseRandomAutoReplyUpdate(RandomNumberGenerator &random) {
     const std::string CONCORD_DEFUALT = 
         "Thank you for contacting Concord Theatricals!\n\n"
         "We have recieved your email and will respond as swiftly as possible. We appreciate your patience.\n\n"

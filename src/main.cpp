@@ -6,7 +6,7 @@
 #include "cluster.h"
 #include "dispatcher.h"
 #include "intents.h"
-#include "rng.h"
+#include "RandomNumberGenerator.h"
 #include "util.h"
 
 int main(int argc, const char** argv){
@@ -31,7 +31,7 @@ int main(int argc, const char** argv){
 
     concordbot.on_log(dpp::utility::cout_logger());
 
-    rng random;
+    RandomNumberGenerator random;
 
     concordbot.on_message_create([&concordbot, &random] (const dpp::message_create_t& event){
             if(event.msg.author.is_bot()){
