@@ -9,7 +9,7 @@ private:
 
 public:
   rng();
-  size_t randomIndex(size_t max);
+  size_t randomIndex(size_t length);
 };
 
 #endif // RNG_H
