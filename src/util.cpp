@@ -75,9 +75,10 @@ std::string chooseRandomAutoReplyUpdate(RandomNumberGenerator &random) {
 }
 
 
-void processMessage(std::string& _message, bool& containsConcord, bool& containsUpdate, bool& containsLicense){
+void processMessage(std::string& _message, bool& containsConcord, bool& containsUpdate, bool& containsLicense, bool& containsEdit){
     const std::string CONCORD = "concord";
     const std::string UPDATE = "update";
+    const std::string EDIT = "edit";
     const std::string STATUS = "status";
     const std::string LICENSE = "license";
 
@@ -93,6 +94,8 @@ void processMessage(std::string& _message, bool& containsConcord, bool& contains
 
 
     containsUpdate = _message.find(UPDATE) != std::string::npos || _message.find(STATUS) != std::string::npos;
+
+    containsEdit = _message.find(EDIT) != std::string::npos;
 
     containsLicense = _message.find(LICENSE) != std::string::npos;
 
