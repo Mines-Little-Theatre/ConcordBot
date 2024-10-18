@@ -5,8 +5,6 @@
 #include "RandomNumberGenerator.h"
 #include "util.h"
 
-
-
 bool getEnvValue(const std::string& KEY, std::string& _value){
     const char* valuePtr = std::getenv(KEY.c_str());
 
@@ -38,6 +36,15 @@ std::string chooseRandomAutoReplyLicense(RandomNumberGenerator &random){
         "We hope to make the process of licensing straightforward, quick, and uncomplicated.";
 
     return CONCORD_EASY;
+}
+std::string chooseRandomAutoReplyLicenseEdit(RandomNumberGenerator &random){
+    const std::string CONCORD_BA = 
+        "Our Business Affairs team is actively reviewing your edits and amendments and have been made aware of your time constraints.\n"
+        "However, we have had an increase in the number of requests of edits to our contracts that has put a strain on our Business Affairs team and we process all requests in the order they have been submitted to be as fair as possible.\n\n"
+        "Thank you for choosing Concord Theatricals!";
+
+    return CONCORD_BA;
+
 }
 
 std::string chooseRandomAutoReplyUpdate(RandomNumberGenerator &random) {

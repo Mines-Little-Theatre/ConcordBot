@@ -20,6 +20,8 @@ bool getEnvValue(const std::string& KEY, std::string& _value);
 
 std::string chooseRandomReaction(RandomNumberGenerator &random);
 
+std::string chooseRandomAutoReplyLicenseEdit(RandomNumberGenerator &random);
+
 std::string chooseRandomAutoReplyLicense(RandomNumberGenerator &random);
 
 std::string chooseRandomAutoReplyUpdate(RandomNumberGenerator &random);
