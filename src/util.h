@@ -20,10 +20,12 @@ bool getEnvValue(const std::string& KEY, std::string& _value);
 
 std::string chooseRandomReaction(RandomNumberGenerator &random);
 
+std::string chooseRandomAutoReplyLicenseEdit(RandomNumberGenerator &random);
+
 std::string chooseRandomAutoReplyLicense(RandomNumberGenerator &random);
 
 std::string chooseRandomAutoReplyUpdate(RandomNumberGenerator &random);
 
-void processMessage(std::string& _message, bool& containsConcord, bool& containsUpdate, bool& containsLicense);
+void processMessage(std::string& _message, bool& containsConcord, bool& containsUpdate, bool& containsLicense, bool& containsEdit);
 
 #endif // UTIL_H

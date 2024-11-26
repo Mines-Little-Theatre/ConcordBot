@@ -41,9 +41,9 @@ int main(int argc, const char** argv){
             // need non const message
             std::string message = event.msg.content;
 
-            bool containsConcord = false, containsUpdate = false, containsLicense = false;
+            bool containsConcord = false, containsUpdate = false, containsLicense = false, containsEdit = false;
 
-            processMessage(message, containsConcord, containsUpdate, containsLicense);
+            processMessage(message, containsConcord, containsUpdate, containsLicense, containsEdit);
 
 
             if(containsConcord && containsUpdate && containsLicense){
@@ -53,6 +53,10 @@ int main(int argc, const char** argv){
 
             if(containsConcord && containsLicense){
                 event.reply(chooseRandomAutoReplyLicense(random), false);
+                return;
+            }
+            if (containsConcord && containsLicense && containsEdit){
+                event.reply(chooseRandomAutoReplyLicenseEdit(random), false);
                 return;
             }
 
