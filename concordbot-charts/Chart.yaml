@@ -1,0 +1,7 @@
+apiVersion: v2
+name: ConcordBot
+type: application
+description: A bot to update MLT about the status of our license requests
+version: 1.0.0
+appVersion: "v1.0.0"
+
