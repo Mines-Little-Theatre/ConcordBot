@@ -7,13 +7,18 @@ set(RUN_LDCONFIG OFF CACHE BOOL "")
 set(DPP_INSTALL OFF CACHE BOOL "")
 set(DPP_BUILD_TEST OFF CACHE BOOL "")
 
-
-add_subdirectory(lib/DPP)
-
-
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(lib/DPP/include)
+if (CMAKE_BUILD_TYPE STREQUAL "Release")
+    message(STATUS "Using system DPP")
+    find_package(dpp REQUIRED)
+    set(DPP_TARGET dpp::dpp)
+else()
+    message(STATUS "Using cloned DPP for debug mode")
+    add_subdirectory(lib/DPP)
+    include_directories(lib/DPP/include)
+    set(DPP_TARGET dpp)
+endif()
 
 set(SRC_FILES src/main.cpp src/RandomNumberGenerator.cpp src/RandomNumberGenerator.h src/util.cpp src/util.h)
 
@@ -31,7 +36,7 @@ ENDIF()
 
 add_executable(ConcordBot ${SRC_FILES})
 
-target_link_libraries(ConcordBot dpp)
+target_link_libraries(ConcordBot ${DPP_TARGET})
 
 set_target_properties(ConcordBot PROPERTIES
     CXX_STANDARD 17

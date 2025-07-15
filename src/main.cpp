@@ -3,9 +3,6 @@
 
 #include <dpp/dpp.h>
 
-#include "cluster.h"
-#include "dispatcher.h"
-#include "intents.h"
 #include "RandomNumberGenerator.h"
 #include "util.h"
 
